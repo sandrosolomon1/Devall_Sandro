@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Devall_Sandro::css/def.css" />
+    </head>
+    <body>
+        <referenceContainer name="header-wrapper">
+            <block class="Devall\Sandro\Block\Page\View"
+                   name="custom.page.link"
+                   template="Devall_Sandro::link.phtml"
+            ></block>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Devall\Sandro\Block\Page\View"
+                   name="sandro.task"
+                   template="Devall_Sandro::main.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Devall\Sandro\ViewModel\ViewModel</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceBlock name="catalog.compare.sidebar">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Devall_Sandro::compare.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>
