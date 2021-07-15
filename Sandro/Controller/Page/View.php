@@ -10,7 +10,7 @@ class View extends Action {
         $page = $this->resultFactory->create(\Magento\Framework\Controller\ResultFactory::TYPE_PAGE);
 
         $block = $page->getLayout()->getBlock('sandro.task');
-        $block->setdata('str','this string is passed from the ViewModel');
+        $block->setdata('str','this string is passed from the Controller');
 
         return $page;
     }
